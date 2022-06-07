@@ -52,17 +52,26 @@ namespace CleanVideoDownloader
             if (dashboardVisibility == true)
             {
                 fade.Hide(tB_Link, true);
+                fade.Hide(prgressBar, true);
                 fade.HideSync(btn_Download, true);
                 swipe.HideSync(dashboardPanel);
+                
                 dashboardPanel.ShadowDecoration.Enabled = false;
                 dashboardPanel.Location = new Point(-140, 45);
                 dashboardControlButton.Text = ">";
                 dashboardVisibility = false;
+                
                 tB_Link.Location = new Point(65, 60);
                 tB_Link.Size = new Size(725, 35);
+
+                prgressBar.Location = new Point(273, 100); ;
+                prgressBar.Size = new Size(515, 45);
+
                 btn_Download.Location = new Point(65, 102);
+                
                 swipe.ShowSync(dashboardPanel, true);
                 fade.Show(tB_Link, true);
+                fade.Show(prgressBar, true);
                 fade.ShowSync(btn_Download, true);
 
                 dashboardPanel.ShadowDecoration.Enabled = true;
@@ -72,17 +81,26 @@ namespace CleanVideoDownloader
             else
             {
                 fade.Hide(tB_Link, true);
+                fade.Hide(prgressBar, true);
                 fade.HideSync(btn_Download, true);
                 swipe.HideSync(dashboardPanel);
+                
                 dashboardPanel.ShadowDecoration.Enabled = false;
                 dashboardPanel.Location = new Point(0, 45);
                 dashboardControlButton.Text = "<";
                 dashboardVisibility = true;
+                
                 tB_Link.Location = new Point(210, 60);
                 tB_Link.Size = new Size(580, 35);
-                btn_Download.Location = new Point(206, 102);
+                
+                prgressBar.Location = new Point(415, 100);
+                prgressBar.Size = new Size(370, 45);
+
+                btn_Download.Location = new Point(205, 100);
+                
                 swipe.ShowSync(dashboardPanel, true);
                 fade.Show(tB_Link, true);
+                fade.Show(prgressBar, true);
                 fade.ShowSync(btn_Download, true);
 
                 dashboardPanel.ShadowDecoration.Enabled = true;
@@ -119,7 +137,7 @@ namespace CleanVideoDownloader
             string exeToRun = @"C:\TEST\youtube-dl.exe";    //Pfad der Ziel EXE-Datei
             if (File.Exists(exeToRun)) //Wenn datei nicht Existiert dann Datei an Zielspeicherort Speichern!
             {
-                System.Diagnostics.Process.Start(exeToRun + " --update");   //Update der youtube-dl.exe
+                System.Diagnostics.Process.Start(exeToRun, "--update");   //Update der youtube-dl.exe
             }
         }
 
