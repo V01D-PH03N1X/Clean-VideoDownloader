@@ -34,17 +34,19 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.ShadowForm = new Guna.UI2.WinForms.Guna2ShadowForm(this.components);
             this.dragPanel = new Guna.UI2.WinForms.Guna2Panel();
-            this.dragBar = new Guna.UI2.WinForms.Guna2DragControl(this.components);
-            this.guna2TileButton1 = new Guna.UI2.WinForms.Guna2TileButton();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            this.guna2TileButton1 = new Guna.UI2.WinForms.Guna2TileButton();
+            this.dragBar = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.dashboardPanel = new Guna.UI2.WinForms.Guna2Panel();
             this.dashboardControlButton = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.swipe = new Guna.UI2.WinForms.Guna2Transition();
-            this.openGithub = new Guna.UI2.WinForms.Guna2Button();
-            this.openAnimation = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
-            this.tB_Link = new Guna.UI2.WinForms.Guna2TextBox();
-            this.fade = new Guna.UI2.WinForms.Guna2Transition();
+            this.guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.openGithub = new Guna.UI2.WinForms.Guna2Button();
+            this.swipe = new Guna.UI2.WinForms.Guna2Transition();
+            this.tB_Link = new Guna.UI2.WinForms.Guna2TextBox();
+            this.btn_Download = new Guna.UI2.WinForms.Guna2Button();
+            this.openAnimation = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
+            this.fade = new Guna.UI2.WinForms.Guna2Transition();
             this.dragPanel.SuspendLayout();
             this.dashboardPanel.SuspendLayout();
             this.SuspendLayout();
@@ -66,9 +68,18 @@
             this.dragPanel.Size = new System.Drawing.Size(800, 45);
             this.dragPanel.TabIndex = 0;
             // 
-            // dragBar
+            // guna2HtmlLabel1
             // 
-            this.dragBar.TargetControl = null;
+            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.fade.SetDecoration(this.guna2HtmlLabel1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.swipe.SetDecoration(this.guna2HtmlLabel1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Brevia Medium", 18F, System.Drawing.FontStyle.Bold);
+            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
+            this.guna2HtmlLabel1.Location = new System.Drawing.Point(3, 8);
+            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
+            this.guna2HtmlLabel1.Size = new System.Drawing.Size(526, 34);
+            this.guna2HtmlLabel1.TabIndex = 2;
+            this.guna2HtmlLabel1.Text = "VideoDownloader - by DarkModz - Official";
             // 
             // guna2TileButton1
             // 
@@ -94,23 +105,15 @@
             this.guna2TileButton1.Text = "X";
             this.guna2TileButton1.Click += new System.EventHandler(this.btn_Exit);
             // 
-            // guna2HtmlLabel1
+            // dragBar
             // 
-            this.guna2HtmlLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.fade.SetDecoration(this.guna2HtmlLabel1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.swipe.SetDecoration(this.guna2HtmlLabel1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2HtmlLabel1.Font = new System.Drawing.Font("Brevia Medium", 18F, System.Drawing.FontStyle.Bold);
-            this.guna2HtmlLabel1.ForeColor = System.Drawing.Color.White;
-            this.guna2HtmlLabel1.Location = new System.Drawing.Point(3, 8);
-            this.guna2HtmlLabel1.Name = "guna2HtmlLabel1";
-            this.guna2HtmlLabel1.Size = new System.Drawing.Size(526, 34);
-            this.guna2HtmlLabel1.TabIndex = 2;
-            this.guna2HtmlLabel1.Text = "VideoDownloader - by DarkModz - Official";
+            this.dragBar.TargetControl = null;
             // 
             // dashboardPanel
             // 
             this.dashboardPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(91)))), ((int)(((byte)(98)))));
             this.dashboardPanel.Controls.Add(this.dashboardControlButton);
+            this.dashboardPanel.Controls.Add(this.guna2Button2);
             this.dashboardPanel.Controls.Add(this.guna2Button1);
             this.dashboardPanel.Controls.Add(this.openGithub);
             this.fade.SetDecoration(this.dashboardPanel, Guna.UI2.AnimatorNS.DecorationType.None);
@@ -150,34 +153,57 @@
             this.dashboardControlButton.UseTransparentBackground = true;
             this.dashboardControlButton.Click += new System.EventHandler(this.dashboardControl);
             // 
-            // swipe
+            // guna2Button2
             // 
-            this.swipe.AnimationType = Guna.UI2.AnimatorNS.AnimationType.HorizSlide;
-            this.swipe.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
-            this.swipe.DefaultAnimation = animation2;
-            this.swipe.Interval = 2;
-            this.swipe.MaxAnimationTime = 1000;
-            this.swipe.TimeStep = 0.01F;
+            this.guna2Button2.Animated = true;
+            this.guna2Button2.AutoRoundedCorners = true;
+            this.guna2Button2.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button2.BorderRadius = 21;
+            this.guna2Button2.CheckedState.Parent = this.guna2Button2;
+            this.guna2Button2.CustomImages.Parent = this.guna2Button2;
+            this.fade.SetDecoration(this.guna2Button2, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.swipe.SetDecoration(this.guna2Button2, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2Button2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(83)))), ((int)(((byte)(80)))));
+            this.guna2Button2.Font = new System.Drawing.Font("Brevia Medium", 8F, System.Drawing.FontStyle.Bold);
+            this.guna2Button2.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button2.HoverState.Parent = this.guna2Button2;
+            this.guna2Button2.Location = new System.Drawing.Point(8, 108);
+            this.guna2Button2.Name = "guna2Button2";
+            this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
+            this.guna2Button2.Size = new System.Drawing.Size(125, 45);
+            this.guna2Button2.TabIndex = 0;
+            this.guna2Button2.Text = "Über VideoDownloader";
+            this.guna2Button2.UseTransparentBackground = true;
+            this.guna2Button2.Click += new System.EventHandler(this.about);
+            // 
+            // guna2Button1
+            // 
+            this.guna2Button1.Animated = true;
+            this.guna2Button1.AutoRoundedCorners = true;
+            this.guna2Button1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Button1.BorderRadius = 21;
+            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
+            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
+            this.fade.SetDecoration(this.guna2Button1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.swipe.SetDecoration(this.guna2Button1, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(83)))), ((int)(((byte)(80)))));
+            this.guna2Button1.Font = new System.Drawing.Font("Brevia Medium", 8F, System.Drawing.FontStyle.Bold);
+            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
+            this.guna2Button1.HoverState.Parent = this.guna2Button1;
+            this.guna2Button1.Location = new System.Drawing.Point(8, 57);
+            this.guna2Button1.Name = "guna2Button1";
+            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
+            this.guna2Button1.Size = new System.Drawing.Size(125, 45);
+            this.guna2Button1.TabIndex = 0;
+            this.guna2Button1.Text = "Update";
+            this.guna2Button1.UseTransparentBackground = true;
+            this.guna2Button1.Click += new System.EventHandler(this.update);
             // 
             // openGithub
             // 
             this.openGithub.Animated = true;
             this.openGithub.AutoRoundedCorners = true;
+            this.openGithub.BackColor = System.Drawing.Color.Transparent;
             this.openGithub.BorderRadius = 21;
             this.openGithub.CheckedState.Parent = this.openGithub;
             this.openGithub.CustomImages.Parent = this.openGithub;
@@ -196,10 +222,29 @@
             this.openGithub.UseTransparentBackground = true;
             this.openGithub.Click += new System.EventHandler(this.github);
             // 
-            // openAnimation
+            // swipe
             // 
-            this.openAnimation.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_BLEND;
-            this.openAnimation.Interval = 500;
+            this.swipe.AnimationType = Guna.UI2.AnimatorNS.AnimationType.HorizSlide;
+            this.swipe.Cursor = null;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.swipe.DefaultAnimation = animation2;
+            this.swipe.Interval = 2;
+            this.swipe.MaxAnimationTime = 1000;
+            this.swipe.TimeStep = 0.01F;
             // 
             // tB_Link
             // 
@@ -227,6 +272,34 @@
             this.tB_Link.ShadowDecoration.Parent = this.tB_Link;
             this.tB_Link.Size = new System.Drawing.Size(725, 35);
             this.tB_Link.TabIndex = 2;
+            this.tB_Link.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tB_Link_KeyUp);
+            // 
+            // btn_Download
+            // 
+            this.btn_Download.Animated = true;
+            this.btn_Download.AutoRoundedCorners = true;
+            this.btn_Download.BackColor = System.Drawing.Color.Transparent;
+            this.btn_Download.BorderRadius = 21;
+            this.btn_Download.CheckedState.Parent = this.btn_Download;
+            this.btn_Download.CustomImages.Parent = this.btn_Download;
+            this.fade.SetDecoration(this.btn_Download, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.swipe.SetDecoration(this.btn_Download, Guna.UI2.AnimatorNS.DecorationType.None);
+            this.btn_Download.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(83)))), ((int)(((byte)(80)))));
+            this.btn_Download.Font = new System.Drawing.Font("Brevia Medium", 18F, System.Drawing.FontStyle.Bold);
+            this.btn_Download.ForeColor = System.Drawing.Color.Black;
+            this.btn_Download.HoverState.Parent = this.btn_Download;
+            this.btn_Download.Location = new System.Drawing.Point(65, 102);
+            this.btn_Download.Name = "btn_Download";
+            this.btn_Download.ShadowDecoration.Parent = this.btn_Download;
+            this.btn_Download.Size = new System.Drawing.Size(202, 45);
+            this.btn_Download.TabIndex = 3;
+            this.btn_Download.Text = "⮟ Download ⮟";
+            this.btn_Download.UseTransparentBackground = true;
+            // 
+            // openAnimation
+            // 
+            this.openAnimation.AnimationType = Guna.UI2.WinForms.Guna2AnimateWindow.AnimateWindowType.AW_BLEND;
+            this.openAnimation.Interval = 500;
             // 
             // fade
             // 
@@ -240,7 +313,7 @@
             animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
             animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
             animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation1.Padding = new System.Windows.Forms.Padding(0);
             animation1.RotateCoeff = 0F;
             animation1.RotateLimit = 0F;
             animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
@@ -250,30 +323,13 @@
             this.fade.DefaultAnimation = animation1;
             this.fade.MaxAnimationTime = 500;
             // 
-            // guna2Button1
-            // 
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.fade.SetDecoration(this.guna2Button1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.swipe.SetDecoration(this.guna2Button1, Guna.UI2.AnimatorNS.DecorationType.None);
-            this.guna2Button1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(83)))), ((int)(((byte)(80)))));
-            this.guna2Button1.Font = new System.Drawing.Font("Brevia Medium", 8F, System.Drawing.FontStyle.Bold);
-            this.guna2Button1.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(8, 57);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(125, 45);
-            this.guna2Button1.TabIndex = 0;
-            this.guna2Button1.Text = "Über VideoDownloader";
-            this.guna2Button1.Click += new System.EventHandler(this.about);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(50)))), ((int)(((byte)(56)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_Download);
             this.Controls.Add(this.tB_Link);
             this.Controls.Add(this.dashboardPanel);
             this.Controls.Add(this.dragPanel);
@@ -282,6 +338,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1Closing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.dragPanel.ResumeLayout(false);
             this.dragPanel.PerformLayout();
@@ -305,6 +362,8 @@
         private Guna.UI2.WinForms.Guna2TextBox tB_Link;
         private Guna.UI2.WinForms.Guna2Transition fade;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
+        private Guna.UI2.WinForms.Guna2Button btn_Download;
     }
 }
 
